@@ -1,0 +1,3 @@
+D:\PandaSecurity3C\PandaSecurityPackaging\bin\Debug\cab1.cab
+D:\PandaSecurity3C\PandaSecurityPackaging\bin\Debug\PandaSecurityPackaging.msi
+D:\PandaSecurity3C\PandaSecurityPackaging\bin\Debug\PandaSecurityPackaging.wixpdb

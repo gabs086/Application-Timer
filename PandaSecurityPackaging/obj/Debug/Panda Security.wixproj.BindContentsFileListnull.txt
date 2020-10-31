@@ -1,0 +1,10 @@
+../PandaSecurity3C/bin/Release/netcoreapp3.1/Microsoft.Win32.TaskScheduler.dll
+../PandaSecurity3C/file/PANDADA.exe
+../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.deps.json
+../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.dll
+../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.exe
+../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.pdb
+../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.runtimeconfig.dev.json
+../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.runtimeconfig.json
+../PandaSecurity3C/bin/Release/netcoreapp3.1/System.Diagnostics.EventLog.dll
+../PandaSecurity3C/file/uninstaller.exe

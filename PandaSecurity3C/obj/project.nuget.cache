@@ -1,0 +1,15 @@
+{
+  "version": 2,
+  "dgSpecHash": "q6hYxO/Z1zUl5imTkdlDMBh2YNjCzfGtOvBo6k4y++JgUVwQ1hKEcLZzrCOPUbEvqV2Q5CVOPeCSemUEm/VkqQ==",
+  "success": true,
+  "projectFilePath": "D:\\PandaSecurity3C\\PandaSecurity3C\\PandaSecurity3C.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\system.diagnostics.eventlog\\4.6.0\\system.diagnostics.eventlog.4.6.0.nupkg.sha512",
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\taskscheduler\\2.8.21\\taskscheduler.2.8.21.nupkg.sha512"
+  ],
+  "logs": []
+}
