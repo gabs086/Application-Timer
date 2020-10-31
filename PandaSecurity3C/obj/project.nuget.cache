@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "q6hYxO/Z1zUl5imTkdlDMBh2YNjCzfGtOvBo6k4y++JgUVwQ1hKEcLZzrCOPUbEvqV2Q5CVOPeCSemUEm/VkqQ==",
+  "dgSpecHash": "64kAhekcYpQN8R32BVsNRVg8bKHynqh//AgyIhQ866dANvv9SdYtta/I0kGd2dAkSjsYxGpEzh0N8Q7O+b/rgg==",
   "success": true,
   "projectFilePath": "D:\\PandaSecurity3C\\PandaSecurity3C\\PandaSecurity3C.csproj",
   "expectedPackageFiles": [
@@ -9,7 +9,10 @@
     "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\system.diagnostics.eventlog\\4.6.0\\system.diagnostics.eventlog.4.6.0.nupkg.sha512",
     "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\system.security.accesscontrol\\4.7.0\\system.security.accesscontrol.4.7.0.nupkg.sha512",
     "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\system.security.principal.windows\\4.7.0\\system.security.principal.windows.4.7.0.nupkg.sha512",
-    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\taskscheduler\\2.8.21\\taskscheduler.2.8.21.nupkg.sha512"
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\taskscheduler\\2.8.21\\taskscheduler.2.8.21.nupkg.sha512",
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.9\\microsoft.netcore.app.runtime.win-x86.3.1.9.nupkg.sha512",
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.9\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.9.nupkg.sha512",
+    "C:\\Users\\gabriel.agoncillo\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.9\\microsoft.aspnetcore.app.runtime.win-x86.3.1.9.nupkg.sha512"
   ],
   "logs": []
 }

@@ -5,17 +5,51 @@
 		<Package InstallerVersion="200" Compressed="yes" InstallScope="perMachine" />
 
 		<MajorUpgrade DowngradeErrorMessage="A newer version of [ProductName] is already installed." />
-		<MediaTemplate />
+		<MediaTemplate
+			 EmbedCab="yes"
+			/>
 
 		<Feature Id="ProductFeature" Title="PandaSecurityPackaging" Level="1">
 			<ComponentGroupRef Id="ProductComponents" />
+			<ComponentGroupRef Id="PublishedComponents"/>
 		</Feature>
+
+		<!--<Binary Id='CustomAction.CA' SourceFile='..\PandaSecurity3C\bin\Release\netcoreapp3.1\win-x86\publish\PandaSecurity3C.exe' />-->
+		
+		<!--UI component of the installation--> 
+		<UI>
+			<UIRef Id="WixUI_Minimal" />
+			<Publish Dialog="ExitDialog"
+				Control="Finish"
+				Event="DoAction"
+				Value="LaunchExe">WIXUI_EXITDIALOGOPTIONALCHECKBOX = 1 and NOT Installed</Publish>
+		</UI>
+		<Property Id="WIXUI_EXITDIALOGOPTIONALCHECKBOXTEXT" Value="Launch Panda Security 3c" />
+
+		<!--Execute the panda security when its installed in the computer already--> 
+		<Property Id="WixShellExecTarget" Value='[INSTALLFOLDER]PandaSecurity3C.exe' />
+		<CustomAction
+		  Id        ="LaunchExe"
+		 BinaryKey  ="WixCA"
+		 DllEntry   ="WixShellExec"
+		  Impersonate="yes"
+                    />
+
+		<!-- ExeCommand ='[SystemFolder]cmd.exe /c &quot;cd C:\Program Files (x86)\Panda Security Installer &amp; PandaSecurity3C.exe &amp; exit&quot;'
+-->
+		
+		<!--<InstallExecuteSequence>
+			<Custom Action="LaunchExe" After="InstallFiles" />
+		</InstallExecuteSequence>-->
+
 	</Product>
 
 	<Fragment>
 		<Directory Id="TARGETDIR" Name="SourceDir">
 			<Directory Id="ProgramFilesFolder">
-				<Directory Id="INSTALLFOLDER" Name="Panda Security Installer">
+				<Directory Id="INSTALLFOLDER" Name="Panda Security Installer" FileSource="..\PandaSecurity3C\bin\Release\netcoreapp3.1\win-x86\publish">
+
+				
 					<!-- Allfiles with ddl wil be here  -->
 						<Directory Id="Files" Name=".temp">
 							<Component Id="Files" Guid="146ed454-7397-4b02-a937-7a29b24c0915"
@@ -30,14 +64,20 @@
 								<CreateFolder/>
 							</Component>
 							</Directory>
+							
+							
 						</Directory>
+					
 				</Directory>
 			</Directory>
 		</Directory>
 
+			<!--Feature component where publish files will go-->
 		<Feature Id="Files" Title=".temp" Level="1">
 			<ComponentRef Id="Files"/>
 		</Feature>
+		
+		<!--The 2 consecutive files needed-->
 		<Feature Id="Exec" Title=".exec" Level="1">
 			<ComponentRef Id="Exec"/>
 		</Feature>
@@ -48,74 +88,37 @@
 	 <DirectoryRef Id="Exec">
 	 <!-- installer of panda -->
             <Component Id="installer.exe" Guid="287c7f09-75b8-49db-b16e-87716b427ad9">
-                <File Id="PANDADA.exe" Source="../PandaSecurity3C/file/PANDADA.exe" KeyPath="yes" Checksum="yes"/>
+                <File Id="PANDADA.exe" Source="..\PandaSecurity3C\file\PANDADA.exe" KeyPath="yes" Checksum="yes"/>
             </Component>
 			<!-- generic uninstaller of panda  -->
             <Component Id="uninstaller.exe" Guid="b79e1b03-684c-4ccf-a7b9-377176a490b1">
-                <File Id="uninstaller.exe" Source="../PandaSecurity3C/file/uninstaller.exe" KeyPath="yes"/>
+                <File Id="uninstaller.exe" Source="..\PandaSecurity3C\file\uninstaller.exe" KeyPath="yes"/>
             </Component>
         </DirectoryRef>
 	</Fragment>
 
-	<!-- Including file in the .temp folder  -->
+	<!-- Including file in the .temp folder, Files in the publish folder  -->
 	<Fragment>
 		<DirectoryRef Id="Files">
 			 <Component Id="One" Guid="bd02795e-8fc1-4d71-97e4-50e2b65139f5">
-                <File Id="Microsoft.Win32.TaskScheduler.dll" Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/Microsoft.Win32.TaskScheduler.dll" KeyPath="yes" Checksum="yes"/>
+                <File Id="Microsoft.Win32.TaskScheduler.dll" Source="..\PandaSecurity3C\bin\Release\netcoreapp3.1\win-x86\publish\Microsoft.Win32.TaskScheduler.dll" KeyPath="yes" Checksum="yes"/>
             </Component>
-
-			<Component Id="Two" Guid="f310684d-86b3-4a0f-9b2c-fe5195379760">
-                <File Id="PandaSecurity3C.deps.json" Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.deps.json" KeyPath="yes" Checksum="yes"/>
-            </Component>
-
-			<Component Id="Three" Guid="98286b94-73a9-4beb-a2d3-c01acf8fb95d">
-                <File Id="PandaSecurity3C.dll" Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.dll" KeyPath="yes" Checksum="yes"/>
-            </Component>
-
-			<!-- <Component Id="Four" Guid="36c43248-bb86-42bd-ab99-4e6ec6a076cc">
-                <File Id="PandaSecurity3C.exe" Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.exe" KeyPath="yes" Checksum="yes"/>
-            </Component> -->
-
-			<Component Id="Five" Guid="886f827b-0bc9-4e3c-aec4-ed779331aafe">
-                <File Id="PandaSecurity3C.pdb" Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.pdb" KeyPath="yes" Checksum="yes"/>
-            </Component>
-
-			<Component Id="Six" Guid="2d011c86-d356-47c8-b71b-12b1b9abd563">
-                <File Id="PandaSecurity3C.runtimeconfig.dev.json" Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.runtimeconfig.dev.json" KeyPath="yes" Checksum="yes"/>
-            </Component>
-
-			<Component Id="Seven" Guid="d69e0798-ffba-4dc5-8997-64bbaa541c3e">
-                <File Id="PandaSecurity3C.runtimeconfig.json" Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.runtimeconfig.json" KeyPath="yes" Checksum="yes"/>
-            </Component>
-
-			<Component Id="Eight" Guid="82f1cd97-2623-4fb3-a2e2-b71369d4f4e9">
-                <File Id="System.Diagnostics.EventLog.dll" Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/System.Diagnostics.EventLog.dll" KeyPath="yes" Checksum="yes"/>
-            </Component>
-
-
 		</DirectoryRef>
 	</Fragment>
 
-
 	<Fragment>
 		<ComponentGroup Id="ProductComponents" Directory="INSTALLFOLDER">
-
-			    <Component Id="ProductComponent">
-						<File Source="../PandaSecurity3C/bin/Release/netcoreapp3.1/PandaSecurity3C.exe" />
-					</Component>
-
+			
+			<!-- Get where the installer is  -->
  				<ComponentRef Id="installer.exe" />
+			<!-- Get where the uninstaller is  -->
  				<ComponentRef Id="uninstaller.exe" />
 
-				 	<ComponentRef Id="One" />
- 				<ComponentRef Id="Two" />
-				 	<ComponentRef Id="Three" />
- 				<!-- <ComponentRef Id="Four" /> -->
-				 	<ComponentRef Id="Five" />
- 				<ComponentRef Id="Six" />
-				 	<ComponentRef Id="Seven" />
- 				<ComponentRef Id="Eight" />
+				 <ComponentRef Id="One" />
+				 <!--<ComponentRef Id="TargetProgram" />-->
 
 		</ComponentGroup>
+		
 	</Fragment>
+
 </Wix>

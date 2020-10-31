@@ -1,7 +1,7 @@
-D:\PandaSecurity3C\PandaSecurityPackaging\bin\Debug\cab1.cab
-D:\PandaSecurity3C\PandaSecurityPackaging\bin\Debug\PandaSecurityPackaging.msi
-D:\PandaSecurity3C\PandaSecurityPackaging\bin\Debug\PandaSecurityPackaging.wixpdb
 obj\Debug\Product.wixobj
 obj\Debug\Panda Security.wixproj.BindContentsFileListnull.txt
 obj\Debug\Panda Security.wixproj.BindOutputsFileListnull.txt
 obj\Debug\Panda Security.wixproj.BindBuiltOutputsFileListnull.txt
+D:\PandaSecurity3C\PandaSecurityPackaging\bin\Debug\PandaSecurity3C.msi
+D:\PandaSecurity3C\PandaSecurityPackaging\bin\Debug\PandaSecurity3C.wixpdb
+obj\Debug\ComponentsGenerated.wixobj
